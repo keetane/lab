@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,14 +16,14 @@
             <span class="brand__mark" aria-hidden="true"></span>
             <span>Keetane Lab</span>
           </a>
-          <nav class="site-nav" id="primary-navigation" data-nav aria-label="Primary">
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="products.html">Products</a>
-            <a href="story.html">Story</a>
-          </nav>
-          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-navigation">
-            Menu
-          </button>
+          <div class="lang-switcher" aria-label="Language switcher">
+            <a class="lang-button" href="index.html" aria-pressed="true" aria-label="English">
+              <span class="lang-button__flag lang-button__flag--us" aria-hidden="true"></span>
+            </a>
+            <a class="lang-button" href="index-jp.html" aria-label="Japanese">
+              <span class="lang-button__flag lang-button__flag--jp" aria-hidden="true"></span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -37,8 +37,8 @@
                 The Keetane Lab develops apps that I would want for children. Here are some apps to help you stay connected with your children every day.
               </p>
               <div class="actions">
-                <a class="button" href="products.html">Explore products</a>
-                <a class="pill-link" href="story.html">Read the story</a>
+                <a class="button" href="kids-money.html">See Kids Money</a>
+                <a class="pill-link" href="#featured">Featured collection</a>
               </div>
             </div>
             <div class="hero-visual" aria-hidden="true">
@@ -47,16 +47,14 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="featured">
           <div class="section__inner">
             <div class="section-intro">
               <div>
                 <p class="eyebrow">Featured collection</p>
                 <h2 class="section-heading">New release.</h2>
               </div>
-              <p class="lede">
-                <!-- now under construction -->
-              </p>
+              <p class="lede">A small lineup of family-friendly learning tools, starting with Kids Money and expanding toward arithmetic-focused apps.</p>
             </div>
             <div class="product-grid">
               <article class="product-card">
@@ -65,8 +63,8 @@
                   <h3>Let’s help grow the money tree.</h3>
                   <p>As your kids help out and save up money, the tree will grow and bear coins.</p>
                   <div class="actions">
-                    <a class="pill-link" href="products.html">Learn more</a>
-                    <a class="button button--dark" href="products.html">Shop Nova</a>
+                    <a class="pill-link" href="kids-money.html">Learn more</a>
+                    <a class="button button--dark" href="kids-money.html">See Kids Money</a>
                   </div>
                 </div>
                 <div class="product-visual product-visual--icon">
@@ -80,8 +78,7 @@
                   <h3>Small steps add up to big hopes</h3>
                   <p>Multio guides you through long division. If you know your multiplication tables, it will walk you through the process to the answer.</p>
                   <div class="actions">
-                    <a class="pill-link" href="products.html">Learn more</a>
-                    <a class="button button--dark" href="products.html">Shop Halo</a>
+                    <span class="pill-link" aria-disabled="true">Coming soon</span>
                   </div>
                 </div>
                 <div class="product-visual product-visual--icon">
@@ -95,8 +92,7 @@
                   <h3>The algorithm for long division</h3>
                   <p>Long division is the culmination of all four arithmetic operations. Divio guides you through the algorithm.</p>
                   <div class="actions">
-                    <a class="pill-link" href="products.html">Learn more</a>
-                    <a class="button button--dark" href="products.html">Shop Frame</a>
+                    <span class="pill-link" aria-disabled="true">Coming soon</span>
                   </div>
                 </div>
                 <div class="product-visual product-visual--icon">
@@ -110,8 +106,7 @@
                   <h3>I love note. I love pen.</h3>
                   <p>Good learning comes only from good practice. Write on paper with a pen. Math Print will generate the long division problems.</p>
                   <div class="actions">
-                    <a class="pill-link" href="products.html">Learn more</a>
-                    <a class="button button--dark" href="products.html">Shop Dock</a>
+                    <span class="pill-link" aria-disabled="true">Coming soon</span>
                   </div>
                 </div>
                 <div class="product-visual product-visual--icon">
@@ -176,51 +171,17 @@
           </div>
         </section>
 
-        <section class="section">
-          <div class="section__inner story-layout">
-            <article class="story-panel">
-              <div>
-                <p class="eyebrow">Story</p>
-                <h2>Designed to disappear behind the object.</h2>
-                <p>
-                  This template keeps the framing deliberate: broad black fields, restrained blue interaction, and
-                  enough editorial space to position a product or service as the subject.
-                </p>
-                <div class="actions">
-                  <a class="pill-link" href="story.html">Visit story page</a>
-                </div>
-              </div>
-              <div class="story-visual" aria-hidden="true">
-                <div class="story-object"></div>
-              </div>
-            </article>
-            <article class="story-panel story-panel--light">
-              <div>
-                <p class="eyebrow">Ready for content</p>
-                <h2>Swap the copy, keep the cadence.</h2>
-                <p>
-                  Product names, descriptions, and visual modules are intentionally generic so the site can be
-                  re-skinned without reworking the layout.
-                </p>
-                <div class="actions">
-                  <a class="pill-link pill-link--light" href="products.html">Review sections</a>
-                </div>
-              </div>
-              <div class="story-visual" aria-hidden="true">
-                <div class="story-object"></div>
-              </div>
-            </article>
-          </div>
-        </section>
       </main>
 
       <footer class="footer">
         <div class="footer__inner">
-          <p class="footer__meta">Placeholder premium framework for GitHub Pages. Replace the copy, keep the grid.</p>
+          <p class="footer__meta">Copyright © 2026 Keetane Lab. All rights reserved.</p>
           <div class="footer__links">
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="story.html">Story</a>
+            <a href="kids-money.html">Kids Money</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="kids-money-support.html">Support</a>
+            <a href="mailto:nobodyknowsxx@gmail.com?subject=Keetane%20Lab%20Support">Contact us</a>
           </div>
         </div>
       </footer>
