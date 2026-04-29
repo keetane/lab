@@ -95,7 +95,7 @@ const galleryLocale = isEnglishPage
   ? {
       portrait: {
         title: "Women's Hair Style",
-        style: "Fashion magazine style, polished, clean, Japanese typography",
+        style: "Fashion magazine style, polished, clean, editorial typography",
         sourceLabel: "source",
         editHeading: "Pattern editor",
         customHeading: "Additional prompt",
@@ -109,7 +109,7 @@ const galleryLocale = isEnglishPage
       },
       product: {
         title: "Men's Hair Style",
-        style: "Men's magazine style, clean, polished, Japanese typography",
+        style: "Men's magazine style, clean, polished, editorial typography",
         sourceLabel: "source",
         editHeading: "Pattern editor",
         customHeading: "Additional prompt",
@@ -123,7 +123,7 @@ const galleryLocale = isEnglishPage
       },
       kids: {
         title: "Kids Hair Style",
-        style: "Kids magazine style, clean, soft palette, Japanese typography",
+        style: "Kids magazine style, clean, soft palette, editorial typography",
         sourceLabel: "source",
         editHeading: "Pattern editor",
         customHeading: "Additional prompt",
@@ -136,7 +136,7 @@ const galleryLocale = isEnglishPage
       },
       glasses: {
         title: "Glasses Style Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source",
         editHeading: "Color editor",
         customHeading: "Additional prompt",
@@ -147,43 +147,63 @@ const galleryLocale = isEnglishPage
       },
       suit: {
         title: "Suit Color Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source unavailable",
+        editHeading: "Additional prompt",
         patternHeading: "Body type",
         heightHeading: "Height",
-        customHeading: "Color specification"
+        heightPlaceholder: "Example: 170 cm",
+        customHeading: "Color specification",
+        customPlaceholder: "Example: Use deeper colors for autumn and winter, with navy-leaning recommendations.",
+        customInstructionLabel: "Additional suit color instructions"
       },
       dress: {
         title: "Dress Color Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source unavailable",
+        editHeading: "Additional prompt",
         patternHeading: "Body type",
         heightHeading: "Height",
-        customHeading: "Color specification"
+        heightPlaceholder: "Example: 160 cm",
+        customHeading: "Color specification",
+        customPlaceholder: "Example: Keep it subdued for a hotel venue, centered on muted colors.",
+        customInstructionLabel: "Additional dress color instructions"
       },
       hat: {
         title: "Hat Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source unavailable",
+        editHeading: "Additional prompt",
         patternHeading: "Body type",
         heightHeading: "Height",
-        customHeading: "Hat specification"
+        heightPlaceholder: "Example: 165 cm",
+        customHeading: "Hat specification",
+        customPlaceholder: "Example: Keep it casual and compare shapes with brims that are not too wide.",
+        customInstructionLabel: "Additional hat instructions"
       },
       tie: {
         title: "Tie Color Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source unavailable",
+        editHeading: "Additional prompt",
         patternHeading: "Body type",
         heightHeading: "Height",
-        customHeading: "Color specification"
+        heightPlaceholder: "Example: 170 cm",
+        customHeading: "Color specification",
+        customPlaceholder: "Example: Keep it business-forward and compare refined, understated accent colors.",
+        customInstructionLabel: "Additional tie color instructions"
       },
       shirt: {
         title: "Shirt and Blouse Color Comparison",
-        style: "Horizontal, clean, white-based comparison table, Japanese typography",
+        style: "Horizontal, clean, white-based comparison table, editorial typography",
         sourceLabel: "source unavailable",
+        editHeading: "Additional prompt",
         patternHeading: "Body type",
         heightHeading: "Height",
-        customHeading: "Color specification"
+        heightPlaceholder: "Example: 165 cm",
+        customHeading: "Color specification",
+        customPlaceholder: "Example: Focus on face-flattering colors that also work well for the office.",
+        customInstructionLabel: "Additional shirt / blouse color instructions"
       },
       education: {
         title: "Study Guide Board",
@@ -301,7 +321,288 @@ if (salonRoot) {
       heightHeading: "Height",
       colorHeading: "Color edit",
       colorPlaceholder: "e.g. Keep it black and tortoiseshell; make the round frame compact.",
-      prompt: "Hair style infographic prompt"
+      promptHair: `Use the uploaded selfie as the model and generate a beauty-style infographic. Automatically generate all content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background with thin beige rules and an elegant, clean Japanese beauty-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Change only the hair color naturally for each pattern
+- Avoid excessive retouching or unnatural dye effects
+- Make it feel like a real Japanese salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+- Keep the person recognizable when the hairstyle changes and keep the outfit identical
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Long", "Short", "Updo"
+- Make the tone shift from left to right feel like "Casual → Natural → Chic"
+- For the 5 columns, use:
+  1. Casual
+  2. Slightly casual
+  3. Natural
+  4. Slightly chic
+  5. Chic
+- Optionally show the broad groups "Casual", "Natural", and "Chic" above the grid
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be long hairstyles
+- Row 2 should be short hairstyles
+- Row 3 should be updos / arranged styles
+- Let the visual impression become more chic as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Hair color pattern guide
+- Title: "Hair Color Pattern Guide"
+- Subtitle: "Hair color suggestions that suit you best"
+- Keep the same amount of information and editorial density as the lower section in the reference image, but replace makeup analysis with hair color suggestions
+- Show five color patterns across the bottom from left to right
+- The order must be:
+  1. Dark color
+  2. Lighter shade
+  3. Recommended
+  4. Blonde
+  5. A more funky, fashion-forward color
+- Keep the same person in all five patterns, and unless otherwise specified, keep the original haircut
+- Keep outfit, expression, shooting conditions, and overall identity consistent; only the hair color should change
+- For each pattern include:
+  - a short heading
+  - a specific automatically generated color name
+  - a smaller portrait image
+  - a 1–2 sentence impression description
+  - a short comment about fit and mood
+- Make the color differences clearly distinct
+- Make "Recommended" a natural and elegant color that suits this person best
+- Make "Dark color" a calm black-to-dark-brown suggestion
+- Make "Lighter shade" a soft light-brown or beige-brown suggestion with natural brightness
+- Make "Blonde" a refined blonde that still feels appropriate for a Japanese editorial
+- Make the funky option visually polished even if it is distinctive
+- Optionally add short notes such as "best point", "best impression", or "caution"
+- You may add a small note area for "Recommended tone" or "Avoided tones", but the main focus should be the five-way comparison
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom guide section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, hair color names, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Long / Short / Updo"
+- Make the horizontal axis clearly read as "Casual → Natural → Chic"
+- Make the bottom section clearly present the five-way hair-color comparison
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information
+- Omitting patterns so there are fewer than five
+- Changing the hairstyle too drastically when no style change is specified`,
+      promptMakeup: `Use the uploaded selfie as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background with thin beige rules and an elegant, clean Japanese beauty-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Change only the hair color naturally for each pattern
+- Avoid excessive retouching or unnatural dye effects
+- Make it feel like a real Japanese salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+- Keep the person recognizable when the hairstyle changes and keep the outfit identical
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Long", "Short", "Updo"
+- Make the tone shift from left to right feel like "Casual → Natural → Chic"
+- For the 5 columns, use:
+  1. Casual
+  2. Slightly casual
+  3. Natural
+  4. Slightly chic
+  5. Chic
+- Optionally show the broad groups "Casual", "Natural", and "Chic" above the grid
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be long hairstyles
+- Row 2 should be short hairstyles
+- Row 3 should be updos / arranged styles
+- Let the visual impression become more chic as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Makeup analysis guide
+- Title: "Makeup analysis guide"
+- Subtitle: "Makeup suggestions that bring out your best features"
+- Keep the same structure as the lower section in the reference image, with a large portrait on the left and analysis information on the right
+- On the left, generate about four feature comments automatically
+- In the upper right, place a face-type analysis chart
+- Show:
+  - Adult face — Childlike face
+  - Straight — Curved
+  - Cool — Feminine
+  - Fresh — Elegant
+- Automatically generate the diagnosis type name, explanation, and hashtags
+- Build the makeup points from four small images: eyes, brows, face contour / nose bridge, lips
+- Add a short explanation to each small image
+- Place a "Recommended colors" box at the bottom with EYE / CHEEK / LIP / BASE
+- Place an "Avoided colors" box in the lower right
+- Generate the color recommendations to match the person's overall vibe
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom analysis section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, makeup analysis, and color suggestions
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Long / Short / Updo"
+- Make the horizontal axis clearly read as "Casual → Natural → Chic"
+- Make the bottom section clearly present the makeup analysis guide
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information
+- Using fewer than four makeup points
+- Changing the hairstyle too drastically when no style change is specified`,
+      promptGlasses: `Use the uploaded selfie as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background with thin beige rules and an elegant, clean Japanese beauty-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Keep the original uploaded image as the base if no specific change is requested
+- Do not change anything except the glasses
+- Make it feel like a real Japanese salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+- Keep the person recognizable when the hairstyle changes and keep the outfit identical
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Long", "Short", "Updo"
+- Make the tone shift from left to right feel like "Casual → Natural → Chic"
+- For the 5 columns, use:
+  1. Casual
+  2. Slightly casual
+  3. Natural
+  4. Slightly chic
+  5. Chic
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be long hairstyles
+- Row 2 should be short hairstyles
+- Row 3 should be updos / arranged styles
+- Let the visual impression become more chic as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Glasses pattern guide
+- Title: "Glasses pattern guide"
+- Subtitle: "Glasses suggestions that suit you best"
+- Place five glasses patterns across the bottom from left to right
+- The order must be:
+  1. Boston
+  2. Wellington
+  3. Square
+  4. Browline
+  5. Metal round
+- Keep the same person in all five patterns and keep outfit, expression, and shooting conditions consistent; only the glasses should change
+- Keep the original uploaded image as the base if no specific change is requested
+- For each pattern include:
+  - a short heading
+  - the frame name
+  - a smaller portrait image
+  - a short description of the impression
+  - a comment about compatibility with facial features
+- Make differences in frame thickness, material feel, intelligence, and softness easy to see
+- Make it feel like a real Japanese editorial or salon styling guide
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom guide section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, and glasses suggestions
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Long / Short / Updo"
+- Make the horizontal axis clearly read as "Casual → Natural → Chic"
+- Make the bottom section clearly present the five-way glasses comparison
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information
+- Using fewer than five patterns
+- Changing anything other than the glasses too drastically`
     },
     product: {
       title: "Men's Hair Style",
@@ -313,7 +614,252 @@ if (salonRoot) {
       heightHeading: "Height",
       colorHeading: "Color edit",
       colorPlaceholder: "e.g. Keep the palette natural and professional.",
-      prompt: "Men's hair style infographic prompt"
+      promptHair: `Use the uploaded men's selfie as the model and generate a men's hair-style infographic. Automatically generate all content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and a refined Japanese men's magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Change the hairstyle naturally for each pattern
+- Avoid stiff wax-heavy styling or over-processed looks
+- Make it feel like a real Japanese men's salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Business", "Casual", "Updo"
+- Make the tone shift from left to right feel like:
+  1. Natural
+  2. Fresh
+  3. Clean
+  4. Mature
+  5. Mode
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be business styles
+- Row 2 should be casual styles
+- Row 3 should be arranged styles
+- Let the visual impression become more mode-like as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Hair color section
+- Add a hair color comparison section to the bottom
+- Unless otherwise specified, keep the original haircut and change only the hair color
+- Compare dark tones, natural brown tones, slightly lighter tones, refined high-tone tones, and a recommended color
+- Add a short explanation and impression note to each pattern
+
+## Bottom overall
+- Let the hair color section play a supporting role at the bottom
+- Keep enough information while preserving the overall editorial balance
+- The top three cards and the middle 3x5 grid should still be the main focus
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, hair color suggestions, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Business / Casual / Updo"
+- Make the horizontal axis clearly read as "Natural → Fresh → Clean → Mature → Mode"
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information`,
+      promptBeard: `Use the uploaded men's selfie as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and a refined Japanese men's magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Change the hairstyle naturally for each pattern
+- Avoid stiff wax-heavy styling or over-processed looks
+- Make it feel like a real Japanese men's salon or grooming consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Business", "Casual", "Updo"
+- Make the tone shift from left to right feel like:
+  1. Natural
+  2. Fresh
+  3. Clean
+  4. Mature
+  5. Mode
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be business styles
+- Row 2 should be casual styles
+- Row 3 should be arranged styles
+- Let the visual impression become more mode-like as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Beard section
+- Add a beard comparison section to the bottom
+- Unless otherwise specified, keep the original uploaded image as the base and keep the person's identity, outfit, and expression consistent
+- Create the following five beard patterns:
+  1. Chin beard
+  2. Mustache
+  3. Business
+  4. Full beard
+  5. Goatee
+- Keep the same person in all five patterns and vary mainly the beard shape
+- Add an English name and a short impression note to each pattern
+- Make it feel like a natural men's grooming or barber consultation sheet
+
+## Bottom overall
+- Let the beard section play the main role at the bottom
+- Keep enough information while preserving the overall editorial balance
+- The top three cards and the middle 3x5 grid should still be the main focus
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, beard suggestions, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Business / Casual / Updo"
+- Make the horizontal axis clearly read as "Natural → Fresh → Clean → Mature → Mode"
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information`,
+      promptGlasses: `Use the uploaded men's selfie as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and a refined Japanese men's magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Keep the original uploaded image as the base if no specific change is requested
+- Do not change anything except the glasses
+- Make it feel like a real men's salon or grooming consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Business", "Casual", "Updo"
+- Make the tone shift from left to right feel like:
+  1. Natural
+  2. Fresh
+  3. Clean
+  4. Mature
+  5. Mode
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be business styles
+- Row 2 should be casual styles
+- Row 3 should be arranged styles
+- Let the visual impression become more mode-like as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Glasses pattern guide
+- Title: "Glasses pattern guide"
+- Subtitle: "Glasses suggestions that suit you best"
+- Place five glasses patterns across the bottom from left to right
+- The order must be:
+  1. Boston
+  2. Wellington
+  3. Square
+  4. Browline
+  5. Metal round
+- Keep the same person in all five patterns and keep outfit, expression, and shooting conditions consistent; only the glasses should change
+- Keep the original uploaded image as the base if no specific change is requested
+- For each pattern include a short heading, the frame name, a small portrait image, and a short impression note
+
+## Bottom overall
+- Let the glasses section play the main role at the bottom
+- Keep enough information while preserving the overall editorial balance
+- The top three cards and the middle 3x5 grid should still be the main focus
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Business / Casual / Updo"
+- Make the horizontal axis clearly read as "Natural -> Fresh -> Clean -> Mature -> Mode"
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information`,
     },
     kids: {
       title: "Kids' Hair Style",
@@ -325,7 +871,151 @@ if (salonRoot) {
       heightHeading: "Height",
       colorHeading: "Color edit",
       colorPlaceholder: "e.g. Keep colors gentle and natural.",
-      prompt: "Kids' hair style infographic prompt"
+      promptSurround: `Use the uploaded child's photo as the model and generate a kids' hairstyle infographic. Automatically generate all content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and a soft, clean Japanese kids-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the child resemble the uploaded photo and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same child across every panel
+- Keep the outfit unchanged
+- Make the expression natural and friendly
+- Unless otherwise specified, keep the original haircut
+- Change only the hairstyle naturally for each pattern
+- Avoid excessive retouching or unnatural stylization
+- Make it feel like a real Japanese kids salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Basic", "Smart", "Updo"
+- Make the tone shift from left to right feel like the hair gets longer
+- Keep the 3 rows as basic, smart, and arranged styles
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be basic styles
+- Row 2 should be smart styles
+- Row 3 should be arranged styles
+- Generate hairstyles naturally so they feel like real salon suggestions for children
+
+## Bottom section: Surround view section
+- Add a surround-view section to the bottom
+- Unless otherwise specified, keep the original haircut and show the same recommended hairstyle from diagonal front, side, diagonal back, back, and top views
+- Keep the same child, outfit, and overall identity consistent
+- You may add a glasses comparison mode as a secondary option if needed
+
+## Bottom overall
+- Let the surround-view section play the main role at the bottom
+- Keep enough information while preserving the overall editorial balance
+- The top three cards and the middle 3x5 grid should still be the main focus
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Basic / Smart / Updo"
+- Make the horizontal axis clearly show the hairstyle getting longer from left to right
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information`,
+      promptGlasses: `Use the uploaded child's photo as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and a soft, clean Japanese kids-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the child resemble the uploaded photo and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same child across every panel
+- Keep the outfit unchanged
+- Make the expression natural and friendly
+- Unless otherwise specified, keep the original haircut
+- Keep the original uploaded image as the base if no specific change is requested
+- Do not change anything except the glasses
+- Make it feel like a real Japanese kids salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Basic", "Smart", "Updo"
+- Make the tone shift from left to right feel like the hair gets longer
+- Keep the 3 rows as basic, smart, and arranged styles
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be basic styles
+- Row 2 should be smart styles
+- Row 3 should be arranged styles
+
+## Bottom section: Glasses pattern guide
+- Title: "Glasses pattern guide"
+- Subtitle: "Glasses suggestions that suit the child best"
+- Place five glasses patterns across the bottom from left to right
+- Keep the same child in all five patterns and keep outfit, expression, and shooting conditions consistent; only the glasses should change
+- Keep the original uploaded image as the base if no specific change is requested
+- For each pattern include a short heading, the frame name, a small portrait image, and a short impression note
+
+## Bottom overall
+- Let the glasses section play the main role at the bottom
+- Keep enough information while preserving the overall editorial balance
+- The top three cards and the middle 3x5 grid should still be the main focus
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, and supporting explanations
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Basic / Smart / Updo"
+- Make the horizontal axis clearly show the hairstyle getting longer from left to right
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information`
     },
     glasses: {
       title: "Glasses Style Comparison",
@@ -337,7 +1027,98 @@ if (salonRoot) {
       heightHeading: "Height",
       colorHeading: "Color edit",
       colorPlaceholder: "e.g. Keep the frames black and tortoiseshell; make the round frame compact.",
-      prompt: "Glasses style comparison prompt"
+      prompt: `Use the uploaded selfie as the model and faithfully reproduce the reference beauty infographic's structure and layout only. Do not copy the text or names from the reference; automatically generate the content.
+
+## Overview
+- Create a single-page, vertical, A4-like infographic
+- Use a white-to-cream background, thin beige rules, and an elegant, clean Japanese beauty-magazine feel
+- Use a serif-like title style and a readable sans-serif body style
+- Compose naturally in English and avoid garbled text
+- Keep the same information density, white space, and editorial feel as the reference image
+
+## Person
+- Make the person resemble the uploaded selfie and do not turn them into someone else
+- Preserve face shape, outline, skin tone, and overall vibe
+- Keep the same person across every panel
+- Keep the outfit unchanged
+- Make the expression natural and polished
+- Unless otherwise specified, keep the original haircut
+- Keep the original uploaded image as the base if no specific change is requested
+- Do not change anything except the glasses
+- Make it feel like a real Japanese salon consultation sheet
+
+## Top section: Hair Style
+- Title: "Hair Style"
+- Subtitle: "Which hairstyle suits you best?"
+- Place three large recommendation cards across the top
+- From left to right: "Best match", "Okay", "Not recommended"
+- Add a crown icon to the left card
+- Automatically generate hairstyle names, explanations, and scores for each card
+- Make the left card highest, the middle card medium, and the right card lowest
+- Make all three hairstyles different
+- Keep the person recognizable when the hairstyle changes and keep the outfit identical
+
+## Middle section: Hairstyle grid
+- Use exactly 3 rows x 5 columns, 15 cells total
+- Left vertical labels from top to bottom: "Long", "Short", "Updo"
+- Make the tone shift from left to right feel like "Casual → Natural → Chic"
+- For the 5 columns, use:
+  1. Casual
+  2. Slightly casual
+  3. Natural
+  4. Slightly chic
+  5. Chic
+- Put a small portrait and an English hairstyle name in each cell
+- Make all 15 cells different
+- Row 1 should be long hairstyles
+- Row 2 should be short hairstyles
+- Row 3 should be updos / arranged styles
+- Let the visual impression become more chic as you move to the right
+- Generate hairstyles naturally so they feel like real salon suggestions
+
+## Bottom section: Glasses pattern guide
+- Title: "Glasses pattern guide"
+- Subtitle: "Glasses suggestions that suit you best"
+- Place five glasses patterns across the bottom from left to right
+- The order must be:
+  1. Boston
+  2. Wellington
+  3. Square
+  4. Browline
+  5. Metal round
+- Keep the same person in all five patterns and keep outfit, expression, and shooting conditions consistent; only the glasses should change
+- Keep the original uploaded image as the base if no specific change is requested
+- For each pattern include:
+  - a short heading
+  - the frame name
+  - a smaller portrait image
+  - a short description of the impression
+  - a comment about compatibility with facial features
+- Make differences in frame thickness, material feel, intelligence, and softness easy to see
+- Make it feel like a real Japanese editorial or salon styling guide
+
+## Most important
+- Reproduce the composition balance of the reference image: top three cards, middle 3x5 grid, and bottom guide section
+- Automatically generate hairstyle names, analysis text, scores, candidate lists, and glasses suggestions
+- Do not copy the original wording from the reference image
+- Keep the middle section at 15 cells
+- Make the vertical axis "Long / Short / Updo"
+- Make the horizontal axis clearly read as "Casual → Natural → Chic"
+- Make the bottom section clearly present the five-way glasses comparison
+
+## Avoid
+- Reusing the original hairstyle names or text from the reference image
+- Non-English text unless explicitly requested
+- Garbled text
+- Turning the person into someone else
+- Distorted faces
+- Excessive anime styling
+- Excessive skin smoothing
+- Loud color palettes
+- Simplifying the layout
+- Reducing the amount of information
+- Using fewer than five patterns
+- Changing anything other than the glasses too drastically`
     },
     suit: {
       title: "Suit Color Comparison",
@@ -347,7 +1128,55 @@ if (salonRoot) {
       customPlaceholder: "e.g. Keep it deep and autumn-like. Compare navy-leaning options.",
       customInstructionLabel: "Additional suit color instructions",
       heightHeading: "Height",
-      prompt: "Suit color comparison prompt"
+      prompt: `Use the uploaded portrait as the base and generate a wide comparison infographic that compares suit colors for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different suit colors change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than the suit color as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "Suit Color Comparison" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a color name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly the suit color.
+- Each pattern should include:
+  - a short label in English
+  - a suit color name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+- Dark color
+- Lighter shade
+- Recommended
+- Blonde
+- A more funky, fashion-forward color
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the suit-color differences the main visual change.`
     },
     dress: {
       title: "Dress Color Comparison",
@@ -357,7 +1186,55 @@ if (salonRoot) {
       customPlaceholder: "e.g. Keep it subdued and suitable for a formal venue.",
       customInstructionLabel: "Additional dress color instructions",
       heightHeading: "Height",
-      prompt: "Dress color comparison prompt"
+      prompt: `Use the uploaded portrait as the base and generate a wide comparison infographic that compares dress colors for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different dress colors change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than the dress color as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "Dress Color Comparison" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a color name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly the dress color.
+- Each pattern should include:
+  - a short label in English
+  - a dress color name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+- Dark color
+- Lighter shade
+- Recommended
+- Blonde
+- A more funky, fashion-forward color
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the dress-color differences the main visual change.`
     },
     hat: {
       title: "Hat Comparison",
@@ -367,7 +1244,55 @@ if (salonRoot) {
       customPlaceholder: "e.g. Keep it casual and compare shapes that are not too wide-brimmed.",
       customInstructionLabel: "Additional hat instructions",
       heightHeading: "Height",
-      prompt: "Hat comparison prompt"
+      prompt: `Use the uploaded portrait as the base and generate a wide comparison infographic that compares hat styles for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different hat styles change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than the hat as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "Hat Comparison" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a hat style name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly the hat style.
+- Each pattern should include:
+  - a short label in English
+  - a hat style name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+- Baseball cap
+- Bucket hat
+- Wide-brim hat
+- Newsboy cap
+- Bucket-style short brim
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the hat differences the main visual change.`
     },
     tie: {
       title: "Tie Color Comparison",
@@ -377,7 +1302,55 @@ if (salonRoot) {
       customPlaceholder: "e.g. Keep it business-forward and compare understated accent colors.",
       customInstructionLabel: "Additional tie color instructions",
       heightHeading: "Height",
-      prompt: "Tie color comparison prompt"
+      prompt: `Use the uploaded portrait as the base and generate a wide comparison infographic that compares tie colors for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different tie colors change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than the tie color as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "Tie Color Comparison" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a tie color name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly the tie color.
+- Each pattern should include:
+  - a short label in English
+  - a tie color name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+- Dark color
+- Lighter shade
+- Recommended
+- Blonde
+- A more funky, fashion-forward color
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the tie-color differences the main visual change.`
     },
     shirt: {
       title: "Shirt / Blouse Color Comparison",
@@ -387,7 +1360,55 @@ if (salonRoot) {
       customPlaceholder: "e.g. Focus on face-flattering colors that work in the office too.",
       customInstructionLabel: "Additional shirt / blouse color instructions",
       heightHeading: "Height",
-      prompt: "Shirt / blouse color comparison prompt"
+      prompt: `Use the uploaded portrait as the base and generate a wide comparison infographic that compares shirt and blouse colors for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different shirt and blouse colors change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than the shirt / blouse color as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "Shirt / Blouse Color Comparison" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a color name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly the shirt / blouse color.
+- Each pattern should include:
+  - a short label in English
+  - a shirt / blouse color name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+- Dark color
+- Lighter shade
+- Recommended
+- Blonde
+- A more funky, fashion-forward color
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the shirt / blouse color differences the main visual change.`
     }
   };
 
@@ -397,7 +1418,57 @@ if (salonRoot) {
     variationLabel,
     variations,
     stylingNote
-  }) => `アップロードされた人物画像をもとに、同一人物の${itemLabel}を比較できる横長インフォグラフィックを生成してください。
+  }) => {
+    if (isEnglishPage) {
+      return `Use the uploaded portrait as the base and generate a wide comparison infographic that compares ${itemLabel} for the same person.
+
+## Goal
+Create a styling reference that clearly compares how different ${itemLabel} choices change the overall impression while keeping the same person and conditions.
+
+## Core rules
+- Depict the uploaded person as the same person in every panel.
+- Keep face shape, skin tone, hair color, expression, age impression, and overall vibe consistent.
+- Keep every element other than ${itemLabel} as consistent as possible so the comparison reads clearly.
+- Use a white or pale neutral background unless otherwise specified.
+- Use English labels and keep the layout easy to read like a polished magazine spread.
+- If body type patterns or height is specified, adjust the silhouette and garment drape naturally to match.
+- Avoid over-processing, exaggerated posing, and unrealistic body correction.
+
+## Person and styling
+- Keep the same person across all panels.
+- Keep pose, camera distance, lighting, background, and expression as consistent as possible.
+- ${stylingNote}
+- Keep fabric texture, fit, and silhouette realistic and natural.
+
+## Infographic structure
+- Use "${title}" as the overall title.
+- Show three recommended options across the top.
+- Each recommendation should include a heading, a short reason, and a ${variationLabel} name.
+- Place five comparison patterns in a row along the bottom.
+- Keep the same person in all five patterns and vary mainly ${itemLabel}.
+- Each pattern should include:
+  - a short label in English
+  - a ${variationLabel} name
+  - a small portrait image
+  - a short impression summary
+  - a comment about how it works with the outfit
+
+## Comparison patterns
+${variations.map((variation, index) => `${index + 1}. ${variation}`).join("\n")}
+
+## Design direction
+- Make it a wide comparison infographic.
+- Use white, ivory, light gray, and pale beige as the base colors.
+- Keep spacing and alignment consistent so differences are easy to read.
+- Keep the amount of text balanced, like a natural comparison table.
+
+## Output requirements
+- Generate a single completed infographic image.
+- Keep the English labels accurate and readable.
+- Preserve the same-person look and make the ${itemLabel} differences the main visual change.`;
+    }
+
+    return `アップロードされた人物画像をもとに、同一人物の${itemLabel}を比較できる横長インフォグラフィックを生成してください。
 
 ## 目的
 ${itemLabel}の違いによる印象の変化を、同一人物・同一条件で分かりやすく比較できるスタイリング提案資料を作成する。
@@ -443,6 +1514,7 @@ ${variations.map((variation, index) => `${index + 1}. ${variation}`).join("\n")}
 - 1枚の完成されたインフォグラフィック画像として生成する。
 - 日本語の文字は正確で読みやすくする。
 - 同一人物性を崩さず、${itemLabel}の違いだけで印象差が伝わるようにする。`;
+  };
 
   const createOutfitSample = ({
     title,
@@ -1612,53 +2684,78 @@ ${variations.map((variation, index) => `${index + 1}. ${variation}`).join("\n")}
     const customText = galleryCustom ? galleryCustom.value.trim() : "";
     const colorText = galleryColorInput ? galleryColorInput.value.trim() : "";
     const selectionState = syncGallerySelectionState(selectedGalleryId);
-    let basePrompt = sample.prompt;
-
-    if (sample.guideModes) {
+    const promptKey = (() => {
       if (selectedGalleryId === "portrait") {
         if (selectedGuideMode === "secondary") {
-          basePrompt = sample.promptMakeup;
-        } else if (selectedGuideMode === "tertiary") {
-          basePrompt = sample.promptGlasses;
-        } else {
-          basePrompt = sample.promptHair;
+          return "promptMakeup";
         }
-      } else if (selectedGalleryId === "product") {
-        if (selectedGuideMode === "secondary") {
-          basePrompt = sample.promptBeard;
-        } else if (selectedGuideMode === "tertiary") {
-          basePrompt = sample.promptGlasses;
-        } else {
-          basePrompt = sample.promptHair;
+        if (selectedGuideMode === "tertiary") {
+          return "promptGlasses";
         }
-      } else if (selectedGalleryId === "kids") {
-        if (selectedGuideMode === "secondary") {
-          basePrompt = sample.promptGlasses;
-        } else {
-          basePrompt = sample.promptSurround;
-        }
+        return "promptHair";
       }
-    }
+
+      if (selectedGalleryId === "product") {
+        if (selectedGuideMode === "secondary") {
+          return "promptBeard";
+        }
+        if (selectedGuideMode === "tertiary") {
+          return "promptGlasses";
+        }
+        return "promptHair";
+      }
+
+      if (selectedGalleryId === "kids") {
+        if (selectedGuideMode === "secondary") {
+          return "promptGlasses";
+        }
+        return "promptSurround";
+      }
+
+      return "prompt";
+    })();
+    let basePrompt = isEnglishPage
+      ? englishView[selectedGalleryId]?.[promptKey] ?? sample[promptKey] ?? sample.prompt
+      : sample[promptKey] ?? sample.prompt;
 
     const promptSections = [];
 
     if (sample.patternOptions && selectionState?.pattern) {
       const patternLabel = sample.patternOptions[selectionState.pattern];
       if (patternLabel) {
-        promptSections.push(`${sample.patternHeading || "体型パターン"}:\n- ${patternLabel}`);
+        const patternHeading = getLocalizedSampleText(
+          selectedGalleryId,
+          "patternHeading",
+          sample.patternHeading || uiCopy.bodyType
+        );
+        promptSections.push(`${patternHeading}:\n- ${patternLabel}`);
       }
     }
 
     if (typeof selectionState?.height === "string" && selectionState.height.trim()) {
-      promptSections.push(`${sample.heightHeading || "身長指定"}:\n- ${selectionState.height.trim()}`);
+      const heightHeading = getLocalizedSampleText(
+        selectedGalleryId,
+        "heightHeading",
+        sample.heightHeading || uiCopy.height
+      );
+      promptSections.push(`${heightHeading}:\n- ${selectionState.height.trim()}`);
     }
 
     if (selectedGalleryId === "glasses" && colorText) {
-      promptSections.push(`${sample.colorHeading || "カラー編集"}:\n- ${colorText.split("\n").filter(Boolean).join("\n- ")}`);
+      const colorHeading = getLocalizedSampleText(
+        selectedGalleryId,
+        "colorHeading",
+        sample.colorHeading || uiCopy.colorEditor
+      );
+      promptSections.push(`${colorHeading}:\n- ${colorText.split("\n").filter(Boolean).join("\n- ")}`);
     }
 
     if (customText) {
-      const instructionLabel = sample.customInstructionLabel || "追加のカスタム指示";
+      const instructionLabel = getLocalizedSampleText(
+        selectedGalleryId,
+        "customInstructionLabel",
+        sample.customInstructionLabel || uiCopy.additionalPrompt
+      );
       promptSections.push(`${instructionLabel}:\n- ${customText.split("\n").filter(Boolean).join("\n- ")}`);
     }
 
