@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creator Profile Prompt | Studio Keetane</title>
+    <meta
+      name="description"
+      content="Studio Keetane の Creator Profile 向け具体例ページ。人物紹介インフォグラフィック用の完成プロンプトをそのままコピーできます。">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <div class="page-shell salon-page creator-page">
+      <header class="site-header" data-header>
+        <div class="site-header__inner">
+          <a class="brand" href="studio-keetane-jp.html" aria-label="Studio Keetane home">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span>Studio Keetane</span>
+          </a>
+          <div class="lang-switcher" aria-label="Language switcher">
+            <span class="lang-button" aria-disabled="true" aria-label="English unavailable">
+              <span class="lang-button__flag lang-button__flag--us" aria-hidden="true"></span>
+            </span>
+            <a class="lang-button" href="creator-profile-jp.html" aria-pressed="true" aria-label="Japanese">
+              <span class="lang-button__flag lang-button__flag--jp" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section section--hero">
+          <div class="section__inner hero hero--salon">
+            <div class="hero__copy">
+              <p class="eyebrow">Concrete prompt page</p>
+              <h1>Creator Profile 用の完成プロンプト。</h1>
+              <p>
+                人物写真を1枚使って、肩書き、経歴、価値観、数字実績を読みやすく見せるための具体例です。
+                ChatGPT に写真と一緒に渡す前提で、最初からかなり完成形に近い文章にしています。
+              </p>
+            </div>
+            <div class="hero-visual salon-hero-visual" aria-hidden="true">
+              <div class="salon-poster salon-poster--portrait">
+                <div class="salon-poster__topline">PERSONA BOARD</div>
+                <div class="salon-poster__headline">Creator Profile</div>
+                <div class="salon-poster__photo"></div>
+                <div class="salon-poster__quote">Quiet luxury, bold headline, compact biography.</div>
+                <div class="salon-poster__chips">
+                  <span>career</span>
+                  <span>skill</span>
+                  <span>vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="final-prompt">
+          <div class="section__inner">
+            <div class="section-intro">
+              <div>
+                <p class="eyebrow">Final prompt</p>
+                <h2 class="section-heading">そのまま使える完成文。</h2>
+              </div>
+              <p class="lede">写真と一緒に ChatGPT へ渡す用の文面です。必要なら肩書きや色味だけ軽く足してください。</p>
+            </div>
+            <div class="salon-builder">
+              <article class="salon-builder-panel">
+                <p class="eyebrow">使い方の目安</p>
+                <h3>最初はこのままで十分。</h3>
+                <p class="salon-builder-note">
+                  まずは写真とこのプロンプトだけで生成し、その後に「もっと余白を」「文字量を減らして」などを重ねる方が安定します。
+                </p>
+                <div class="detail-meta">
+                  <span class="meta-pill">写真: 顔がはっきり</span>
+                  <span class="meta-pill">比率: 縦長</span>
+                  <span class="meta-pill">雰囲気: 上品</span>
+                </div>
+                <div class="salon-upload-hint">
+                  <p>追加で変えやすい項目</p>
+                  <ol>
+                    <li>色味を暖色寄りにするか、モノトーン寄りにするか</li>
+                    <li>数字実績を強く見せるか、メッセージ性を強く見せるか</li>
+                    <li>日本語中心にするか、英語見出しを混ぜるか</li>
+                  </ol>
+                </div>
+              </article>
+
+              <article class="salon-builder-panel salon-builder-panel--editor">
+                <label class="salon-label" for="creator-profile-prompt">完成プロンプト</label>
+                <textarea
+                  id="creator-profile-prompt"
+                  class="salon-textarea salon-textarea--large"
+                  spellcheck="false">アップロードした人物写真を使って、上品で洗練された人物紹介インフォグラフィックを1枚作成してください。
+
+目的:
+- クリエイター、講師、登壇者、ブランドオーナーなどのプロフィールを印象よく紹介する
+- 第一印象で人物像、強み、実績、世界観が伝わるようにする
+
+レイアウト:
+- 縦長ポスター寄りのインフォグラフィックにする
+- 写真を主役として大きく配置し、その周囲に情報を整理して置く
+- 上部に名前または肩書きを強い見出しで入れる
+- 中段に短いプロフィールまたは紹介文を入れる
+- 下段またはサイドに数字実績を3つ前後、得意領域、価値観やキーワードを整理して配置する
+
+タイポグラフィ:
+- 見出しは大きく、本文は短く、読みやすくする
+- 雑誌の特集ページのように余白を活かし、情報の優先順位が一目で分かる構成にする
+- 日本語中心で、必要があれば英単語の見出しをアクセントとして少量使う
+
+カラーと質感:
+- ベージュ、アイボリー、チャコールを基調にした落ち着いた配色
+- 高級感はあるが、冷たすぎず親しみもある印象にする
+- 派手なグラデーションや安っぽい発光表現は避ける
+
+写真の扱い:
+- 顔立ちや表情を自然に保ち、別人化しない
+- 背景がうるさい場合は整理して、人物が主役になるようにする
+- 顔や上半身の存在感が最初に目に入るように構成する
+
+入れたい情報:
+- 名前
+- 肩書き
+- 一言プロフィール
+- 実績や数字3つ前後
+- 得意領域
+- 価値観または短いメッセージ
+
+出力:
+- 1枚の完成インフォグラフィック画像
+- SNS投稿やプロフィール紹介画像としてそのまま使える完成度
+- 文字は読みやすく、情報は詰め込みすぎない
+
+禁止事項:
+- 情報量を増やしすぎない
+- 色数を増やしすぎない
+- 写真の顔を別人のように変えない
+- 安っぽいビジネステンプレート風にしない</textarea>
+                <div class="actions salon-actions">
+                  <button class="button" type="button" data-copy-target="creator-profile-prompt" data-copy-feedback="creator-profile-copy-status">コピーする</button>
+                  <span class="salon-copy-status" id="creator-profile-copy-status" aria-live="polite"></span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <p class="footer__meta">Copyright © 2026 Studio Keetane. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="studio-keetane-jp.html">Home</a>
+            <a href="studio-keetane-jp.html">Studio Keetane</a>
+            <a href="creator-profile-jp.html">Creator Profile Prompt</a>
+            <a href="index-jp.html">Keetane Lab</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>

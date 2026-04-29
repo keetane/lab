@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Studio Keetane</title>
+    <meta
+      name="description"
+      content="写真とプロンプトでChatGPT向けのインフォグラフィックを素早く組み立てる、Studio Keetane のサンプル集。">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <div class="page-shell salon-page">
+      <header class="site-header" data-header>
+        <div class="site-header__inner">
+          <a class="brand" href="studio-keetane-jp.html" aria-label="Studio Keetane home">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span>Studio Keetane</span>
+          </a>
+          <div class="lang-switcher" aria-label="Language switcher">
+            <span class="lang-button" aria-disabled="true" aria-label="English unavailable">
+              <span class="lang-button__flag lang-button__flag--us" aria-hidden="true"></span>
+            </span>
+            <a class="lang-button" href="studio-keetane-jp.html" aria-pressed="true" aria-label="Japanese">
+              <span class="lang-button__flag lang-button__flag--jp" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main data-salon-root>
+        <section class="section section--salon-strip">
+          <div class="section__inner">
+            <div class="salon-gallery-strip">
+              <div class="salon-gallery-strip__header">
+                <div>
+                  <p class="eyebrow">Create an image</p>
+                  <h2 class="salon-gallery-strip__title">成功をイメージしてみよう。</h2>
+                </div>
+                <div class="salon-gallery-strip__arrows" aria-hidden="true">
+                  <span>‹</span>
+                  <span>›</span>
+                </div>
+              </div>
+              <div class="salon-gallery-strip__rail">
+                <article class="salon-gallery-thumb" data-gallery-card="portrait" data-gallery-category="hair">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="portrait">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--portrait">
+                      <div class="salon-gallery-thumb__mini-title">Hair style infographic</div>
+                    </div>
+                  </button>
+                  <h3>女性ヘアスタイル</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="product" data-gallery-category="hair">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="product">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--product">
+                      <div class="salon-gallery-thumb__mini-title">Men's hair style infographic</div>
+                    </div>
+                  </button>
+                  <h3>男性ヘアスタイル</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="kids" data-gallery-category="hair">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="kids">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--kids">
+                      <div class="salon-gallery-thumb__mini-title">Kids hair style infographic</div>
+                    </div>
+                  </button>
+                  <h3>キッズヘアスタイル</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="glasses" data-gallery-category="accessory">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="glasses">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--glasses">
+                      <div class="salon-gallery-thumb__mini-title">Glasses style infographic</div>
+                    </div>
+                  </button>
+                  <h3>メガネスタイル比較</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="suit" data-gallery-category="outfit">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="suit">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--suit-color">
+                      <div class="salon-gallery-thumb__mini-title">Suit color comparison</div>
+                    </div>
+                  </button>
+                  <h3>スーツカラー比較</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="dress" data-gallery-category="outfit">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="dress">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--dress-color">
+                      <div class="salon-gallery-thumb__mini-title">Dress color comparison</div>
+                    </div>
+                  </button>
+                  <h3>ドレスカラー比較</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="hat" data-gallery-category="accessory">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="hat">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--hat">
+                      <div class="salon-gallery-thumb__mini-title">Hat style comparison</div>
+                    </div>
+                  </button>
+                  <h3>帽子比較</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="tie" data-gallery-category="outfit">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="tie">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--tie-color">
+                      <div class="salon-gallery-thumb__mini-title">Tie color comparison</div>
+                    </div>
+                  </button>
+                  <h3>ネクタイカラー比較</h3>
+                </article>
+                <article class="salon-gallery-thumb" data-gallery-card="shirt" data-gallery-category="outfit">
+                  <button class="salon-gallery-thumb__button" type="button" data-gallery-select="shirt">
+                    <div class="salon-gallery-thumb__visual salon-gallery-thumb__visual--shirt-blouse-color">
+                      <div class="salon-gallery-thumb__mini-title">Shirt and blouse color comparison</div>
+                    </div>
+                  </button>
+                  <h3>シャツ・ブラウスカラー比較</h3>
+                </article>
+              </div>
+              <div class="salon-gallery-compose">
+                <article class="salon-gallery-compose__card" data-gallery-compose-panel="controls">
+                  <p class="eyebrow">Custom prompt</p>
+                  <h3 data-gallery-edit-heading data-gallery-pattern-heading>パターン編集</h3>
+                  <div class="salon-chip-row salon-gallery-compose__modes" data-gallery-modes data-gallery-mode-group data-gallery-pattern-group aria-label="Portrait guide mode">
+                    <button class="pill-link pill-link--chip" type="button" data-gallery-guide-mode="primary" data-gallery-guide-slot="primary" data-gallery-pattern="slim" aria-pressed="true">ヘアカラー</button>
+                    <button class="pill-link pill-link--chip" type="button" data-gallery-guide-mode="secondary" data-gallery-guide-slot="secondary" data-gallery-pattern="balanced" aria-pressed="false">メイク</button>
+                    <button class="pill-link pill-link--chip" type="button" data-gallery-guide-mode="tertiary" data-gallery-guide-slot="tertiary" data-gallery-pattern="solid" aria-pressed="false">メガネ</button>
+                  </div>
+                  <div class="salon-gallery-compose__measure" data-gallery-height-wrap data-gallery-height-group hidden>
+                    <label class="salon-label" for="gallery-height-input" data-gallery-height-label data-gallery-height-heading>身長指定</label>
+                    <input
+                      id="gallery-height-input"
+                      class="salon-input"
+                      type="text"
+                      inputmode="text"
+                      data-gallery-height
+                      placeholder="例: 170cm">
+                  </div>
+                  <div class="salon-gallery-compose__measure" data-gallery-color-wrap hidden>
+                    <textarea
+                      id="gallery-color-input"
+                      class="salon-textarea salon-textarea--small"
+                      data-gallery-color
+                      placeholder="例: ブラックとべっ甲を中心に、ラウンドは小ぶりに。"></textarea>
+                  </div>
+                  <h3 data-gallery-custom-heading>追加プロンプト</h3>
+                  <textarea
+                    class="salon-textarea salon-textarea--small"
+                    data-gallery-custom
+                    placeholder="例: もっと上品に。縦長ポスターにして、数字実績は2つだけに絞る。"></textarea>
+                </article>
+                <article class="salon-gallery-compose__card salon-gallery-compose__card--output">
+                  <div class="salon-gallery-compose__topline">
+                    <div>
+                      <p class="eyebrow">Prompt preview</p>
+                      <h3 data-gallery-title>ヘアスタイル</h3>
+                    </div>
+                    <span class="meta-pill" data-gallery-style>美容雑誌風、上品、清潔感</span>
+                  </div>
+                  <textarea
+                    class="salon-textarea salon-textarea--large salon-gallery-compose__output"
+                    data-gallery-output
+                    spellcheck="false"></textarea>
+                  <div class="actions salon-actions">
+                    <button class="button" type="button" data-copy-target="salon-gallery-output" data-copy-feedback="salon-gallery-copy-status" data-gallery-copy>コピーする</button>
+                    <a
+                      class="pill-link pill-link--light pill-link--source"
+                      data-gallery-source-link
+                      href="https://x.com/katap_yutori/status/2048318468878221555"
+                      target="_blank"
+                      rel="noreferrer noopener">source</a>
+                    <a class="pill-link pill-link--light" href="https://chatgpt.com/" target="_blank" rel="noreferrer noopener" data-copy-and-open="salon-gallery-output">ChatGPT</a>
+                    <a class="pill-link pill-link--light" href="https://gemini.google.com/" target="_blank" rel="noreferrer noopener" data-copy-and-open="salon-gallery-output">Gemini</a>
+                    <a class="pill-link pill-link--light" href="https://grok.com/" target="_blank" rel="noreferrer noopener" data-copy-and-open="salon-gallery-output">grok</a>
+                    <span class="salon-copy-status" id="salon-gallery-copy-status" aria-live="polite"></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <p class="footer__meta">Copyright © 2026 Studio Keetane. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="studio-keetane-jp.html">Home</a>
+            <a href="studio-keetane-jp.html">Studio Keetane</a>
+            <a href="index-jp.html">Keetane Lab</a>
+            <a href="funmony-jp.html">Funmony</a>
+            <a href="coin-tree-jp.html">Coin Tree</a>
+            <a href="privacy-jp.html">Privacy Policy</a>
+            <a href="support-jp.html">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
