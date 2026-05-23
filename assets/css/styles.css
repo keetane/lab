@@ -1326,7 +1326,7 @@ button {
   display: grid;
   justify-items: center;
   align-content: center;
-  gap: 0;
+  gap: 22px;
   padding: 0;
 }
 
@@ -1335,6 +1335,21 @@ button {
   height: 350px;
   border-radius: 26%;
   box-shadow: 0 28px 64px rgba(0, 0, 0, 0.32);
+}
+
+.app-store-link {
+  min-width: 210px;
+}
+
+.app-icon-link {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 26%;
+  transition: transform 180ms ease;
+}
+
+.app-icon-link:hover {
+  transform: translateY(-1px);
 }
 
 .story-visual,
